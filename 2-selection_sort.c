@@ -1,10 +1,12 @@
-#include "sort"
+#include "sort.h"
 /**
-  * cocktail_sort_list - define function
-  * @void: describe argument
+  * selection_sort - define function
+  * @array: describe argument
+  * @size: describe
   * Return: 0 on success
   */
-void cocktail_sort_list(listint_t **list)
+void selection_sort(int *array, size_t size)
 {
-	(char *)list;
+	array++;
+	size++;
 }

@@ -1,11 +1,11 @@
-#include "sort"
+#include "sort.h"
 /**
-  * merge_sort - define function
-  * @void: describe argument
-  * Return: 0 on success
+  * quick_sort - define function
+  * @array: describe argument
+  * @size: describe
   */
-void merge_sort(int *array, size_t size)
+void quick_sort(int *array, size_t size)
 {
-	(char *)array;
-	(int)size;
+	array++;
+	size++;
 }

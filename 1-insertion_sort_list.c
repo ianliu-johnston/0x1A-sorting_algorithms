@@ -1,12 +1,9 @@
 #include "sort.h"
 /**
-  * insertion_sort - selection sort algorithm
-  * @array: input array
-  * @size: size of the array
-  * Return: 0 on success
+  * insertion_sort_list - insertion sort algorithm
+  * @list: Linked list to be sorted
   */
-void insertion_sort(int *array, size_t size)
+void insertion_sort_list(listint_t **list)
 {
-	(char *)array;
-	(int)size;
+	list++;
 }
