@@ -1,14 +1,14 @@
 #Holberton School - 0x1A-sorting_algorithms
 Sorting Algorithms in C.
 
-## New commands / functions used:
-``gcc``
-
 ## Helpful Links
 * [Wikipedia on Sorting Algorithms](https://en.wikipedia.org/wiki/Sorting_algorithm)
 * [Big O Notations](https://www.google.com/search?q=big+o+notation)
 * [15 Sorting Algorithms: Youtube](https://www.youtube.com/watch?v=kPRA0W1kECg)
 * [Sorting Algorithm Animations](https://www.toptal.com/developers/sorting-algorithms)
+
+### Somewhat Helpful Links
+* [Colors in Terminal Output](http://stackoverflow.com/questions/3219393/stdlib-and-colored-output-in-c#answer-3219471)
 
 ## Description of Files
 <h6>sort.h</h6>
