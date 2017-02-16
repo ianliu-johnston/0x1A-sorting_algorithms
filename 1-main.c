@@ -33,6 +33,7 @@ listint_t *create_listint(const int *array, size_t size)
     return (list);
 }
 
+void print_list_rev(const listint_t *list, int i, int j);
 void insertion_sort_arr(int array[], size_t size);
 /**
  * main - Entry point
@@ -51,6 +52,7 @@ int main(void)
         return (EXIT_FAILURE);
 	printf("START: ");
     print_list(list);
+	print_list_rev(list, -1, -1);
     printf("\n");
     insertion_sort_list(&list);
     printf("\n");

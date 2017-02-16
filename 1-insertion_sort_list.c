@@ -1,5 +1,36 @@
 #include "sort.h"
 /**
+ * print_list_rev - Prints a doubly linkedd list of integers in reverse
+ * @list: The list to be printed
+ */
+void print_list_rev(const listint_t *list, int i, int j)
+{
+	int n = 0;
+	const listint_t *tail;
+
+	while(list)
+	{
+		tail = list;
+		list = list->next;
+		n++;
+	}
+	printf("\x1b[33m%02d: \x1b[0m", i);
+	while (tail)
+	{
+		if (tail->next)
+			printf(" ");
+		if (n == i)
+			printf("\x1b[31m%02d\x1b[0m", tail->n);
+		else if (n == j)
+			printf("\x1b[32m%02d\x1b[0m", tail->n);
+		else
+			printf("%02d", tail->n);
+		tail = tail->prev;
+		n--;
+	}
+	printf("\n");
+}
+/**
  * print_list2 - Prints a list of integers
  * @list: The list to be printed
  */
@@ -76,25 +107,40 @@ void insertion_sort_list(listint_t **list)
 
 	i = j = 0;
 	head = *list;
+	/* Start at the second node */
 	head = head->next;
 	while (head->next)
 	{
 		walk = head;
 		j = i;
-		while (walk->prev != NULL && walk->prev->n > walk->n)
+		while (j > 0 && walk->prev && (walk->prev)->n > walk->n)
 		{
-			/* saves the pointer to unsorted */
+			/*
+		printf("\x1b[35m%02d BEFORE: walk = %d, swap = %d, head = %d\n\x1b[0m", i, walk->n, swap->n, head->n);
+		*/
 			swap = walk;
-			/* iterate */
 			walk = walk->prev;
+			if (walk->prev)
+				walk->prev->next = swap;
+			if (swap->next)
+				swap->next->prev = walk;
 			walk->next = swap->next;
-			walk->prev->next = swap;
 			swap->prev = walk->prev;
+			walk->prev = swap;
 			swap->next = walk;
+			if (swap->prev)
+				walk = swap->prev;
 			j--;
+			print_list2(*list, i, j);
+		/*
+		printf("\x1b[35m%02d AFTER: walk = %d, swap = %d, head = %d\n\x1b[0m", i, walk->n, swap->n, head->n);
+		*/
 		}
 		i++;
 		head = head->next;
 		print_list2(*list, i, j);
+		/*
+		print_list_rev(*list, i, j);
+		*/
 	}
 }
